@@ -4,15 +4,6 @@ const app = express()
 var path = require('path');
 const {fork} = require("child_process")
 
-//Configure YoutubeMp3Downloader with your settings
-let YD = new YoutubeMp3Downloader({        // FFmpeg binary location
-    "outputPath": "/Users/mohidqureshi/Documents/YoutubeDownloadServer/files", // Output file location (default: the home directory)
-    "youtubeVideoQuality": "highestaudio",  // Desired video quality (default: highestaudio)
-    "queueParallelism": 2,                  // Download parallelism (default: 1)
-    "progressTimeout": 1000,                // Interval in ms for the progress reports (default: 1000)
-    "allowWebm": false                      // Enable download from WebM sources (default: false)
-});
-
 app.use(express.static('files'))
 
 //id is the id of the youtube link
