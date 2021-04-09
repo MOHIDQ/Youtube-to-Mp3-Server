@@ -17,9 +17,9 @@ process.on("message", message => {
 	YD.on("finished", (err, data) => {
 	    console.log(JSON.stringify(data, null, 2));
 	    let path = data.videoTitle
-	    let urlPath = "http://localhost:8080/" + path.replace(/ /g, "%20") + ".mp3" //creating url for the nwe mp3 file
+	    let urlPath = "http://localhost:8080/" + path.replace(/ /g, "%20") + ".mp3" //creating url for the new mp3 file
 	    process.send({"url": urlPath, "status_code": 200}) //sending object with url and status code to parent process
-		process.exit() //exit/kill child process to preserve memory
+		process.exit() // exit/kill child process to preserve memory
 	});
 	 
 	YD.on("error", function(error) {

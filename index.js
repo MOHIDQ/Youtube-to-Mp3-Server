@@ -4,7 +4,7 @@ const app = express()
 var path = require('path');
 const {fork} = require("child_process")
 
-app.use(express.static('files'))
+app.use(express.static('files')) //serve mp3 files
 
 //id is the id of the youtube link
 app.post("/convert/:id", (req, res) => {
