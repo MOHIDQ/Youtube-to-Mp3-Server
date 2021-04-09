@@ -2,7 +2,7 @@ const YoutubeMp3Downloader = require("youtube-mp3-downloader");
 const express = require("express")
 const app = express()
 var path = require('path');
-const cors = rquire('cors')
+const cors = require('cors')
 const {fork} = require("child_process")
 
 app.use(cors())
