@@ -2,8 +2,10 @@ const YoutubeMp3Downloader = require("youtube-mp3-downloader");
 const express = require("express")
 const app = express()
 var path = require('path');
+const cors = rquire('cors')
 const {fork} = require("child_process")
 
+app.use(cors())
 app.use(express.static('files')) //serve mp3 files
 
 //id is the id of the youtube link
