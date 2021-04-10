@@ -1,7 +1,7 @@
 const YoutubeMp3Downloader = require("youtube-mp3-downloader");
 //Configure YoutubeMp3Downloader with your settings
 let YD = new YoutubeMp3Downloader({        // FFmpeg binary location
-    "outputPath": "/Users/mohidqureshi/Documents/YoutubeDownloadServer/files", // Output file location (default: the home directory)
+    "outputPath": "/Users/mohidqureshi/Documents/YoutubeDownloadServer/Youtube-to-Mp3-Server/files", // Output file location (default: the home directory)
     "youtubeVideoQuality": "highestaudio",  // Desired video quality (default: highestaudio)
     "queueParallelism": 2,                  // Download parallelism (default: 1)
     "progressTimeout": 1000,                // Interval in ms for the progress reports (default: 1000)
@@ -23,6 +23,7 @@ process.on("message", message => {
 	});
 	 
 	YD.on("error", function(error) {
+		console.log(error)
 	    //return {"error": "Url incorrect"}
 	    process.send({"error": "Url incorrect", "status_code": 404})
 		process.exit()
